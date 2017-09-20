@@ -1,0 +1,52 @@
+select * from schools;
+
+insert into schools (name,location)
+values('FAMU', 'Tallahassee'),('FAU','Boca Raton'),('FSCJ','Jacksonville'),('FSU','Tallahassee');
+
+insert into professors (name,school)
+values('Wesley Snipes', 'Florida A&M University),('Morgan Freeman', 'Bethune Cookman University')
+
+CREATE TABLE Users (
+    name text,
+    screenname text,
+    id serial Primary Key
+)
+
+-- CREATE TABLE Professors (
+--     name text,
+--     school int REFERENCES schools(id),
+--     id serial Primary Key
+-- )
+
+-- CREATE TABLE ProfessorRating (
+--     id serial Primary Key,
+--     professorid int REFERENCES Professors(id),
+        reputation int,
+        takeagain text,
+        forcredit text,
+        textbookuse int,
+        attendance int,
+        hotness int,
+        happiness int,
+        mycomment text,
+        grade text
+)
+    
+-- CREATE TABLE SchoolRating (
+--      id serial Primary Key,
+--      professorid int REFERENCES School(id),
+        reputation int,
+--      locations int,
+        oppurtunities int,
+        facilities text,
+        internet text,
+        food int,
+        clubs int,
+        social int,
+        happiness int,
+        safety text,
+        gradyear text,
+        comment text
+)
+
+

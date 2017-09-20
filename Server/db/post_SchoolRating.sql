@@ -1,0 +1,2 @@
+insert into SchoolRating (schoolsid, reputation, locations, oppurtunities, facilities, internet, food, clubs, social, happiness, safety, gradyear, mycomment)
+values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
