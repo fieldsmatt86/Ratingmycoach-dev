@@ -8,6 +8,7 @@ const app = module.exports = express();
 app.use( bodyParser.json() );
 app.use( cors() );
 
+app.use( express.static(__dirname+'/../build'));
 
 app.get('/api/schools', function(req, res){
     console.log('here') 
@@ -175,7 +176,7 @@ app.post('/api/ProfessorRating', function(req,res){
 })
 
 
-const port = 3001;
+const port = 80;
 
 massive( connectionString ).then( db =>{
      app.set ('db', db)
