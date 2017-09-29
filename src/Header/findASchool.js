@@ -20,7 +20,7 @@ class findASchool extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/api/schools")
+    axios.get("/api/schools")
     .then(res => {
       console.log(res.data)
       this.setState({
@@ -67,7 +67,7 @@ class findASchool extends Component {
               
         </div>
 
-          <div className= "bx">
+          <div id= "bx">
        <NavBar />
         <div className = "bm">
             <h1>Find your school</h1>

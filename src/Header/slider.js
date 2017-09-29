@@ -122,7 +122,7 @@ this.safety = this.safety.bind(this)
           schoolID: this.props.schoolID
         })
       console.log(sliderobject)
-      axios.post("http://localhost:3001/api/SchoolRating", sliderobject )
+      axios.post("/api/SchoolRating", sliderobject )
       .then(() => {
         this.setState({
             schoolID: this.props.schoolID,

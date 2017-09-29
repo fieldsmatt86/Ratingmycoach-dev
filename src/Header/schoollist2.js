@@ -42,7 +42,7 @@ class schoolList extends Component {
 
   getHappiness(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/happiness?schoolsid=${id}`)
+    axios.get(`/api/happiness?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         happiness: respond.data[0].id
@@ -52,12 +52,12 @@ class schoolList extends Component {
 
   //   componentDidMount() {
   //     console.log('component mounting')
-  //   // axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
+  //   // axios.get(`/api/SchoolID?name=${this.props.match.params.id}`)
   
   // }
 
   getComments(id) {
-    axios.get(`http://localhost:3001/api/SchoolComments?id=${id}`)
+    axios.get(`/api/SchoolComments?id=${id}`)
     .then( res => {
       this.setState ({
         comments: res.data
@@ -67,9 +67,9 @@ class schoolList extends Component {
 
   componentDidMount() {
       console.log(this.props.match.params.id)
-    axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
+    axios.get(`/api/SchoolID?name=${this.props.match.params.id}`)
     .then(res => {
-      axios.get(`http://localhost:3001/api/happiness?schoolsid=${res.data[0].id}`)
+      axios.get(`/api/happiness?schoolsid=${res.data[0].id}`)
     .then(respond => {
       console.log(respond.data)
       console.log('september')

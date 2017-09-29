@@ -18,7 +18,7 @@ class findAProfessor extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/api/schools")
+    axios.get("/api/schools")
     .then(res => {
       console.log(res.data)
       this.setState({

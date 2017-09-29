@@ -64,7 +64,7 @@ class schoolList extends Component {
 
   getHappiness(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/happiness?schoolsid=${id}`)
+    axios.get(`/api/happiness?schoolsid=${id}`)
     .then( res => {
       this.setState ({
         happiness: res.data[0].id
@@ -74,7 +74,7 @@ class schoolList extends Component {
 
    getReputation(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/reputation?schoolsid=${id}`)
+    axios.get(`/api/reputation?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         reputation: respond.data[0].id
@@ -84,7 +84,7 @@ class schoolList extends Component {
 
      getLocations(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/locations?schoolsid=${id}`)
+    axios.get(`/api/locations?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         locations: respond.data[0].id
@@ -94,7 +94,7 @@ class schoolList extends Component {
 
      getOppurtunities(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/oppurtunities?schoolsid=${id}`)
+    axios.get(`/api/oppurtunities?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         oppurtunities: respond.data[0].id
@@ -104,7 +104,7 @@ class schoolList extends Component {
 
      getFacilities(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/facilities?schoolsid=${id}`)
+    axios.get(`/api/facilities?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         facilities: respond.data[0].id
@@ -114,7 +114,7 @@ class schoolList extends Component {
 
      getInternet(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/internet?schoolsid=${id}`)
+    axios.get(`/api/internet?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         internet: respond.data[0].id
@@ -124,7 +124,7 @@ class schoolList extends Component {
 
      getFood(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/food?schoolsid=${id}`)
+    axios.get(`/api/food?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         food: respond.data[0].id
@@ -134,7 +134,7 @@ class schoolList extends Component {
 
      getClubs(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/clubs?schoolsid=${id}`)
+    axios.get(`/api/clubs?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         clubs: respond.data[0].id
@@ -144,7 +144,7 @@ class schoolList extends Component {
 
      getSocial(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/social?schoolsid=${id}`)
+    axios.get(`/api/social?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         social: respond.data[0].id
@@ -154,7 +154,7 @@ class schoolList extends Component {
 
      getSafety(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/safety?schoolsid=${id}`)
+    axios.get(`/api/safety?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         safety: respond.data[0].id
@@ -164,7 +164,7 @@ class schoolList extends Component {
 
      getOverall(id) {
     console.log('this',id)
-    axios.get(`http://localhost:3001/api/overall?schoolsid=${id}`)
+    axios.get(`/api/overall?schoolsid=${id}`)
     .then( respond => {
       this.setState ({
         safety: respond.data[0].id
@@ -174,12 +174,12 @@ class schoolList extends Component {
 
   //   componentDidMount() {
   //     console.log('component mounting')
-  //   // axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
+  //   // axios.get(`/api/SchoolID?name=${this.props.match.params.id}`)
   
   // }
 
   getComments(id) {
-    axios.get(`http://localhost:3001/api/SchoolComments?id=${id}`)
+    axios.get(`/api/SchoolComments?id=${id}`)
     .then( res => {
       this.setState ({
         comments: res.data
@@ -189,63 +189,63 @@ class schoolList extends Component {
 
   componentDidMount() {
       console.log(this.props.match.params.id)
-       axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
+       axios.get(`/api/SchoolID?name=${this.props.match.params.id}`)
     .then(res => {
        this.setState({
         SchoolID: res.data[0].id
       })
-       axios.get(`http://localhost:3001/api/happiness?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/happiness?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         happiness: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/reputation?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/reputation?schoolsid=${res.data[0].id}`)
     .then(respond => {
       this.setState({
         reputation: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/locations?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/locations?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         locations: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/oppurtunities?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/oppurtunities?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         oppurtunities: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/facilities?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/facilities?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         facilities: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/internet?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/internet?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         internet: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/food?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/food?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         food: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/clubs?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/clubs?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         clubs: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/social?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/social?schoolsid=${res.data[0].id}`)
     .then(respond => {
        this.setState({
         social: respond.data[0].avg
       })
-       axios.get(`http://localhost:3001/api/safety?schoolsid=${res.data[0].id}`)
+       axios.get(`/api/safety?schoolsid=${res.data[0].id}`)
     .then(respond => {
       this.setState({
         safety: respond.data[0].avg,
        
       })
-        axios.get(`http://localhost:3001/api/overall?schoolsid=${res.data[0].id}`)
+        axios.get(`/api/overall?schoolsid=${res.data[0].id}`)
     .then(respond => {
       this.setState({
         safety: respond.data[0].avg,

@@ -41,7 +41,7 @@ this.getComments = this.getComments.bind(this)
   }
 
   getComments(id) {
-    axios.get(`http://localhost:3001/api/SchoolComments?id=${id}`)
+    axios.get(`/api/SchoolComments?id=${id}`)
     .then( res => {
       // console.log(res.data)
 
@@ -53,7 +53,7 @@ this.getComments = this.getComments.bind(this)
 
     componentDidMount() {
       console.log(this.props)
-    axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
+    axios.get(`/api/SchoolID?name=${this.props.match.params.id}`)
     .then(res => {
       console.log(res.data)
       this.setState({

@@ -126,7 +126,7 @@ this.comment = this.comment.bind(this)
           ProfessorID: this.props.ProfessorID
         })
 
-     axios.post("http://localhost:3001/api/ProfessorRating", sliderobject )
+     axios.post("/api/ProfessorRating", sliderobject )
       .then(() => {
         this.setState({
         

@@ -13,7 +13,7 @@ class Comments extends Component {
     }
  }
   // componentDidMount() {
-  //   axios.get("http://localhost:3001/api/SchoolRating")
+  //   axios.get("/api/SchoolRating")
   //   .then(res => {
   //     console.log(res.data)
   //     this.setState({

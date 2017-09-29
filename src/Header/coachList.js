@@ -41,7 +41,7 @@ class coachList extends Component {
   }
 
   getComments(id) {
-    axios.get(`http://localhost:3001/api/ProfessorComments?id=${id}`)
+    axios.get(`/api/ProfessorComments?id=${id}`)
     .then( res => {
       this.setState ({
         comments: res.data
@@ -51,7 +51,7 @@ class coachList extends Component {
 
     componentDidMount() {
       console.log(this.props)
-    axios.get(`http://localhost:3001/api/ProfessorID?name=${this.props.match.params.id}`)
+    axios.get(`/api/ProfessorID?name=${this.props.match.params.id}`)
     .then(res => {
       console.log(res.data)
       this.setState({
