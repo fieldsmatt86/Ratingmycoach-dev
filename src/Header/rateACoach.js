@@ -37,33 +37,65 @@ class rateACoach extends Component {
   
   render() {
     return (
-      <div id= "bg">
-        <NavBar />
-        <div className = "bm">
-        <h1>Rate your Coach</h1>
+    <div>
+   <div id= "bz">
+          <NavBar />
+            <div className = "bm">
+            <h1>Rate your Coach</h1>
 
-      <AutoComplete
-        getItemValue={(item) => item.name}
-        items={this.state.Professors}
-        renderItem={(item, isHighlighted) =>
-          <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-            {item.name}
+          <AutoComplete
+            getItemValue={(item) => item.name}
+            items={this.state.Professors}
+            renderItem={(item, isHighlighted) =>
+              <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                {item.name}
+              </div>
+            }
+            value={this.state.text}
+            onChange={(e) => this.updateText(e.target.value)}
+            onSelect={(val) => this.updateText(val)}
+          />
+        
+          <Link className="search3" to={"/coachList/" + this.state.text}>
+            Search
+          </Link>
+
+            <Link className="cancel" to="/">
+              <ade3>CANCEL</ade3>
+            </Link>
           </div>
-        }
-        value={this.state.text}
-        onChange={(e) => this.updateText(e.target.value)}
-        onSelect={(val) => this.updateText(val)}
-      />
-     
-      <Link className="search3" to={"/coachList/" + this.state.text}>
-        Search
-      </Link>
-
-        <Link className="cancel" to="/">
-           <ade3>CANCEL</ade3>
-        </Link>
-     </div>
     
+   </div>
+
+ <div id= "bx">
+          <NavBar />
+            <div className = "bm">
+            <h1>Rate your Coach</h1>
+
+          <AutoComplete
+            getItemValue={(item) => item.name}
+            items={this.state.Professors}
+            renderItem={(item, isHighlighted) =>
+              <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                {item.name}
+              </div>
+            }
+            value={this.state.text}
+            onChange={(e) => this.updateText(e.target.value)}
+            onSelect={(val) => this.updateText(val)}
+          />
+        
+          <Link className="search3" to={"/coachList/" + this.state.text}>
+            Search
+          </Link>
+
+            <Link className="cancel" to="/">
+              <ade3>CANCEL</ade3>
+            </Link>
+          </div>
+    
+   </div>
+   
   </div>
     );
   }

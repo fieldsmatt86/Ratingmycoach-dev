@@ -27,7 +27,8 @@ class schoolList extends Component {
       food: '',
       clubs: '',
       social: '',
-      safety: ''
+      safety: '',
+      overall: ''
     }
 
     this.addComments = this.addComments.bind(this)
@@ -43,6 +44,7 @@ class schoolList extends Component {
     this.getClubs = this.getClubs.bind(this)
     this.getSocial = this.getSocial.bind(this)
     this.getSafety = this.getSafety.bind(this)
+    this.getOverall = this.getOverall.bind(this)
 
 
   }
@@ -160,6 +162,16 @@ class schoolList extends Component {
     })
   }
 
+     getOverall(id) {
+    console.log('this',id)
+    axios.get(`http://localhost:3001/api/overall?schoolsid=${id}`)
+    .then( respond => {
+      this.setState ({
+        safety: respond.data[0].id
+      })
+    })
+  }
+
   //   componentDidMount() {
   //     console.log('component mounting')
   //   // axios.get(`http://localhost:3001/api/SchoolID?name=${this.props.match.params.id}`)
@@ -233,6 +245,12 @@ class schoolList extends Component {
         safety: respond.data[0].avg,
        
       })
+        axios.get(`http://localhost:3001/api/overall?schoolsid=${res.data[0].id}`)
+    .then(respond => {
+      this.setState({
+        safety: respond.data[0].avg,
+       
+      })
            
     })    
     })   
@@ -247,9 +265,9 @@ class schoolList extends Component {
       // this.getHappiness(respond.data[0].id)
     })
       this.getComments(res.data[0].id)
-    })
-  }
-
+    })}
+     ) }
+  
   render() {
     console.log(this.state)
     return (
@@ -294,6 +312,7 @@ class schoolList extends Component {
                                               clubs = { this.state.clubs}
                                               social = { this.state.social}
                                               safety = { this.state.safety}
+                                              overall = { this.state.overall}
                                                />
                         </div>
             </div>

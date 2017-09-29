@@ -19,43 +19,43 @@ class IndividualRating2 extends Component {
     <div className='ratecomment'>
         <div className= 'userrating'>  
             <div className="com">
-                <p4>{comment.reputation}</p4>
+                <p4>{comment.reachable}</p4>
                 <h4>reputation</h4>
             </div>
             <div className="com">
-                <p4>{comment.locations}</p4>
+                <p4>{comment.relatable}</p4>
                 <h4>location</h4>
             </div>
             <div className="com">
-                <p4>{comment.oppurtunities}</p4>
+                <p4>{comment.straightforward}</p4>
                 <h4>oppurtunities</h4>
             </div>
             <div className="com">
-                <p4>{comment.facilities}</p4>
+                <p4>{comment.trustworthy}</p4>
                 <h4>facilities</h4>
             </div>
             <div className="com">
-                <p4>{comment.internet}</p4>
+                <p4>{comment.intense}</p4>
                 <h4>internet</h4>
             </div>
             <div className="com">
-                <p4>{comment.food}</p4>
+                <p4>{comment.expertise}</p4>
                 <h4>food</h4>
             </div>
             <div className="com">
-                <p4>{comment.clubs}</p4>
+                <p4>{comment.encouraging}</p4>
                 <h4>clubs</h4>
             </div>
             <div className="com">
-                <p4>{comment.social}</p4>
+                <p4>{comment.strengthconditioning}</p4>
                 <h4>social</h4>
             </div>
             <div className="com">
-                <p4>{comment.happiness}</p4>
+                <p4>{comment.playagain}</p4>
                 <h4>happiness</h4>
             </div>
             <div className="com">
-                <p4>{comment.safety}</p4>
+                <p4>{comment.yeargraduated}</p4>
                 <h4>safety</h4>
             </div>
         </div>

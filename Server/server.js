@@ -167,8 +167,8 @@ app.post('/api/SchoolRating', function(req,res){
 
 app.post('/api/ProfessorRating', function(req,res){
     let db = app.get('db')
-    let params = [Number(req.body.ProfessorID), req.body.reputation, req.body.takeagain, req.body.forcredit, req.body.textbookuse, req.body.attendance, req.body.hotness, req.body.happiness, req.body.mycomment, req.body.grade]
-    console.log('this is our endpoint' , params)
+    let params = [Number(req.body.ProfessorID), req.body.reachable, req.body.relatable, req.body.straightforward, req.body.trustworthy, req.body.intense, req.body.expertise, req.body.encouraging, req.body.strengthconditioning, req.body.playagain, req.body.yeargraduated, req.body.comment]
+    console.log('this is our endpoint2' , params)
     db.post_ProfessorRating(params).then(() => {
          res.status(200).send('sucess')
     }).catch(err => console.log(err))

@@ -77,11 +77,8 @@ class IndividualRating extends Component {
 
     return (
       <div className="schoolavg">
-         <h1> Lets see what the people have to say! </h1>   
-             <div className="com2">
-                <p4></p4>
-                <h4>Overall Score</h4>
-            </div>
+         <h1> School Averages </h1>   
+          
             <div className="com2">
                 <p4>{this.props.reputation}</p4>
                 <h4>reputation</h4>

@@ -9,101 +9,114 @@ class Slider2 extends Component {
      constructor(props){
         super(props)
         this.state = {
-            rate: '',
-            difficulty: '',
-            takeagain: '',
-            forcredit: '',
-            textbookuse: '',
-            attendance: '',
-            hotness: '',
-            mycomment: '',
-            mygrade: '',
-            ProfessorID: props.ProfessorID
+            ProfessorID: props.ProfessorID,
+            reachable: '',
+            relatable: '',
+            straightforward: '',
+            trustworthy: '',
+            intense: '',
+            expertise: '',
+            encouraging: '',
+            strengthconditioning: '',
+            playagain: '',
+            yeargraduated: '',
+            comment: ''
         }
 
-this.forcredit = this.forcredit.bind(this)
-this.takeagain = this.takeagain.bind(this)
-this.coursecode = this.coursecode.bind(this)
-this.rate = this.rate.bind(this)
-this.difficulty = this.difficulty.bind(this)
-this.textbookuse = this.textbookuse.bind(this)
-this.attendance = this.attendance.bind(this)
-this.hotness = this.hotness.bind(this)
-this.mycomment = this.mycomment.bind(this)
-this.mygrade = this.mygrade.bind(this)
+this.reachable = this.reachable.bind(this)
+this.relatable = this.relatable.bind(this)
+this.straightforward = this.straightforward.bind(this)
+this.trustworthy = this.trustworthy.bind(this)
+this.intense = this.intense.bind(this)
+this.expertise = this.expertise.bind(this)
+this.encouraging = this.encouraging.bind(this)
+this.strengthconditioning = this.strengthconditioning.bind(this)
+this.playagain = this.playagain.bind(this)
+this.dropDown = this.dropDown.bind(this)
+this.comment = this.comment.bind(this)
      }
 
-      takeagain(e) {
-        console.log(e.target.value)
+      reachable(e) {
+        console.log(e.value)
         this.setState({
-            takeagain: e.target.value,
+            reachable: e.value,
         })
     }
 
-      forcredit(e) {
-        console.log(e.target.value)
+      relatable(e) {
+        console.log(e.value)
         this.setState({
-            forcredit: e.target.value,
+            relatable: e.value,
         })
     }
    
-     coursecode(e) {
+     straightforward(e) {
         console.log(e.value)
         this.setState({
-            coursecode: e.value
+            straightforward: e.value
         })
     }
 
-      rate(e) {
+      trustworthy(e) {
         console.log(e.value)
         this.setState({
-            rate: e.value
+            trustworthy: e.value
         })
     }
 
-      difficulty(e) {
+      intense(e) {
         console.log(e.value)
         this.setState({
-            difficulty: e.value
+            intense: e.value
         })
     }
   
-      textbookuse(e) {
-        console.log(e.target.value)
-        this.setState({
-            textbookuse: e.target.value
-        })
-    }
-
-      attendance(e) {
-        console.log(e.target.value)
-        this.setState({
-            attendance: e.target.value
-        })
-    }
-
-       hotness(e) {
-        console.log(e.target.value)
-        this.setState({
-            hotness: e.target.value
-        })
-    }
-       mycomment(e) {
+      expertise(e) {
         console.log(e.value)
         this.setState({
-            mycomment: e.value
+            expertise: e.value
         })
     }
-        mygrade(e) {
+
+      encouraging(e) {
+        console.log(e.value)
+        this.setState({
+            encouraging: e.value
+        })
+    }
+
+       strengthconditioning(e) {
+        console.log(e.alue)
+        this.setState({
+            strengthconditioning: e.value
+        })
+    }
+
+        playagain(e) {
         console.log(e.target.value)
         this.setState({
-            mygrade: e.target.value
+            playagain: e.target.value
         })
         }
 
-  mycomment(val) {
+        dropDown(e) {
+        console.log(e.target.value)
+        this.setState({
+            yeargraduated: e.target.value
+        })
+        }
+
+       comment(e) {
+        console.log(e.value)
+        this.setState({
+            comment: e.value
+        })
+    }
+    
+
+  comment(val) {
     this.setState({
-      mycomment: val
+      comment: val
     })
   }
 
@@ -116,16 +129,19 @@ this.mygrade = this.mygrade.bind(this)
      axios.post("http://localhost:3001/api/ProfessorRating", sliderobject )
       .then(() => {
         this.setState({
-            rate: '',
-            difficulty: '',
-            takeagain: '',
-            forcredit: '',
-            textbookuse: '',
-            attendance: '',
-            hotness: '',
-            mycomment: '',
-            mygrade: '',
-            ProfessorID: this.props.ProfessorID
+        
+            ProfessorID: this.props.ProfessorID,
+            reachable: '',
+            relatable: '',
+            straightforward: '',
+            trustworthy: '',
+            intense: '',
+            expertise: '',
+            encouraging: '',
+            strengthconditioning: '',
+            playagain: '',
+            yeargraduated: '',
+            comment: ''
         })
         this.props.getcomments(this.props.ProfessorID)
       })
@@ -137,16 +153,28 @@ this.mygrade = this.mygrade.bind(this)
  <div className ='Ratings'>
       <div className='Pep'>
         <num>1</num>
-       <p2>COURSE CODE </p2>
-       <h3> </h3>
+       <p2>REACHABLE </p2>
+       <h3> {this.state.reachable} </h3>
+         <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.reachable}
+            value= {this.state.reachable}
+          />
+        </div>
       <i className="fa fa-question-circle" aria-hidden="true"></i>
 
       </div>
     
        <div className='Pep'>
          <num>2</num>
-       <p2> RATE YOUR PROFESSOR </p2>
-       <h3> {this.state.rate} </h3>
+       <p2> RELATABLE </p2>
+       <h3> {this.state.relatable} </h3>
         <div className='rep2'>
           <ReactSimpleRange className='heck'
             label
@@ -155,16 +183,16 @@ this.mygrade = this.mygrade.bind(this)
             max={5}
             sliderSize={15}
             thumbSize={20}
-            onChange={this.rate}
-            value= {this.state.rate}
+            onChange={this.relatable}
+            value= {this.state.relatable}
           />
         </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
        <div className='Pep'>
          <num>3</num>
-       <p2> LEVEL OF DIFFICULTY </p2>
-        <h3> {this.state.difficulty}</h3>
+       <p2> STRAIGHTFORWARD </p2>
+        <h3> {this.state.straightforward}</h3>
         <div className='rep2'>
           <ReactSimpleRange className='heck'
             label
@@ -173,109 +201,159 @@ this.mygrade = this.mygrade.bind(this)
             max={5}
             sliderSize={15}
             thumbSize={20}
-            onChange={this.difficulty}
-            value={this.state.difficulty}
+            onChange={this.straightforward}
+            value={this.state.straightforward}
           />
         </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
        <div className='Pep'>
          <num>4</num>
-   <p2> WOULD YOU TAKE THIS PROF AGAIN? </p2>
-       <p2> {this.state.takeagain} </p2>
-
-          <select value={this.state.takeagain}  name="cars" onChange={this.takeagain}>
-                <option value="">Please Select</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Maybe">Maybe</option>
-    </select>
-      
-        
+       <p2> TRUSTWORTHY </p2>
+        <h3> {this.state.trustworthy}</h3>
+        <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.trustworthy}
+            value={this.state.trustworthy}
+          />
+        </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
        <div className='Pep'>
          <num>5</num>
-       <p2> WAS THIS CLASS TAKEN FOR CREDIT </p2>
-        <p2> {this.state.forcredit}</p2>
-
-         <select value={this.state.forcredit}  name="cars" onChange={this.forcredit}>
-                <option value="">Please Select</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Maybe">Maybe</option>
-    </select>
-       
+       <p2> INTENSE </p2>
+        <h3> {this.state.intense}</h3>
+        <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.intense}
+            value={this.state.intense}
+          />
+        </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
-      <div className='Pep'>
-        <num>6</num>
-       <p2> TEXTBOOK USE </p2>
-       <p2> {this.state.textbookuse} </p2>
-
-        <select value={this.state.textbookuse}  name="cars" onChange={this.textbookuse}>
-                <option value="">Please Select</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Maybe">Maybe</option>
-        </select>
-        
+       <div className='Pep'>
+         <num>6</num>
+       <p2> EXPERTISE </p2>
+        <h3> {this.state.expertise}</h3>
+        <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.expertise}
+            value={this.state.expertise}
+          />
+        </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
        <div className='Pep'>
          <num>7</num>
-       <p2> ATTENDANCE </p2>
-       <p2>{this.state.attendance} </p2>
-        <select value={this.state.attendance}  name="cars" onChange={this.attendance}>
-                <option value="">Please Select</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Maybe">Maybe</option>
-    </select>
-   
+       <p2> ENCOURAGING </p2>
+        <h3> {this.state.encouraging}</h3>
+        <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.encouraging}
+            value={this.state.encouraging}
+          />
+        </div>
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
        <div className='Pep'>
          <num>8</num>
-       <p2> HOTNESS </p2>
-       <p2>{this.state.hotness}</p2>
-        <select value={this.state.hotness}  name="cars" onChange={this.hotness}>
+       <p2> Strength and Conditioning </p2>
+        <h3> {this.state.strengthconditioning}</h3>
+        <div className='rep2'>
+          <ReactSimpleRange className='heck'
+            label
+            vertical
+            min={1}
+            max={5}
+            sliderSize={15}
+            thumbSize={20}
+            onChange={this.strengthconditioning}
+            value={this.state.strengthconditioning}
+          />
+        </div>
+       <i className="fa fa-question-circle" aria-hidden="true"></i>
+      </div>
+
+       <div className='Pep'>
+         <num>9</num>
+   <p2> WOULD YOU PLAY FOR THIS COACH AGAIN? </p2>
+       <p2> {this.state.playagain} </p2>
+
+          <select value={this.state.playagain}  name="cars" onChange={this.playagain}>
                 <option value="">Please Select</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
                 <option value="Maybe">Maybe</option>
     </select>
-        
       
+        
        <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
-          <div className = 'Pep'>
-        <num>9</num> 
-        <p2 className='t5'> GRADE RECIEVED </p2>
-        <p2> {this.state.mygrade} </p2>
-         <select value={this.state.mygrade}  name="cars" onChange={this.mygrade}>
+      
+    
+  <div className= 'Rep2'>
+      <div className = 'Rep5'>
+        <num>10</num> 
+        <p2 className='t5'> GRADUATION YEAR </p2>
+        <p2> {this.state.yeargraduated} </p2>
+            <select value={this.state.yeargraduated}  name="cars" onChange={this.dropDown}>
                 <option value="">Please Select</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="F">F</option>
-        </select>
-         <i className="fa fa-question-circle" aria-hidden="true"></i>
-
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+            </select>
+       
       </div>
-     <div>
+    
+  
  
 
         <div className='Rep3'>
-         <num>10</num>
+         <num>11</num>
         <p2 className='t'> HERE'S YOUR CHANCE TO BE MORE SPECIFIC </p2>
-         
-       <i className="fa fa-question-circle" aria-hidden="true"></i>
       </div>
+  
+        <textarea onChange={ (e) => this.comment(e.target.value) }
+                       value = {this.state.comment}/>
 
-      <textarea className="text5" />
-      
        <button onClick={ () => this.ratethisprofessor()}>
             Rate this campus 
       </button>

@@ -37,7 +37,8 @@ class findASchool extends Component {
 
   render() {
     return (
-    <div id= "bg">
+    <div>
+    <div id= "bz">
        <NavBar />
         <div className = "bm">
             <h1>Find your school</h1>
@@ -65,6 +66,36 @@ class findASchool extends Component {
         </div>
               
         </div>
+
+          <div className= "bx">
+       <NavBar />
+        <div className = "bm">
+            <h1>Find your school</h1>
+    
+            <AutoComplete
+             getItemValue={(item) => item.name}
+              items={this.state.schools}
+              renderItem={(item, isHighlighted) =>
+               <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+               {item.name}
+               </div>
+               }
+               value={this.state.text}
+               onChange={(e) => this.updateText(e.target.value)}
+               onSelect={(val) => this.updateText(val)}
+              />
+     
+              <Link className="search3" to={"/schoolList/" + this.state.text}>
+                Search
+              </Link>
+
+               <Link className="cancel" to="/">
+                <ade3>CANCEL</ade3>
+               </Link>
+        </div>
+              
+        </div>
+      </div>
     );
   }
 }
